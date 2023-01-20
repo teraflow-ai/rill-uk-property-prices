@@ -1,0 +1,4 @@
+# Visit https://docs.rilldata.com/ to learn more about Rill code artifacts.
+
+type: "https"
+uri: "http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-complete.csv"

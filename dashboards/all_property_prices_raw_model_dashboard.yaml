@@ -1,0 +1,62 @@
+# Visit https://docs.rilldata.com/references/project-files to learn more about Rill project files.
+
+display_name: "all_property_prices_raw_model_dashboard"
+model: "all_property_prices_raw_model"
+timeseries: "Date of Transfer"
+measures:
+  - label: Number of Properties Sold
+    expression: count(*)
+    description: Total number of properties sold
+    format_preset: humanize
+  - label: "Average Price"
+    expression: "avg(price)"
+    description: "Average sale price stated on the transfer deed."
+    format_preset: currency_usd
+  - label: "Standard Deviation"
+    expression: "stddev_pop(price)"
+    description: "Standard deviation of sale price stated on the transfer deed."
+    format_preset: currency_usd
+dimensions:
+  - label: Postcode
+    property: Postcode
+    description: ""
+    Description: This is the postcode used at the time of the original transaction.
+      Note that postcodes can be reallocated and these changes are not reflected
+      in the Price Paid Dataset.
+  - label: Property Type
+    property: Property Type
+    description: ""
+    Description: "D = Detached, S = Semi-Detached, T = Terraced, F =
+      Flats/Maisonettes, O = Other Note that: - we only record the above
+      categories to describe property type, we do not separately identify
+      bungalows - end-of-terrace properties are included in the Terraced
+      category above - ‘Other’ is only valid where the transaction relates to a
+      property type that is not covered by existing values, for example where a
+      property comprises more than one large parcel of land"
+  - label: Newly Built
+    property: Newly Built
+    description: ""
+    Description: "Indicates the age of the property and applies to all price paid
+      transactions, residential and non-residential. Y = a newly built property,
+      N = an established residential building"
+  - label: Duration
+    property: Duration
+    description: ""
+    Description: "Relates to the tenure: F = Freehold, L= Leasehold etc. Note that
+      HM Land Registry does not record leases of 7 years or less in the Price
+      Paid Dataset."
+  - label: Street
+    property: Street
+    description: ""
+  - label: Locality
+    property: Locality
+    description: ""
+  - label: Town
+    property: Town
+    description: ""
+  - label: District
+    property: District
+    description: ""
+  - label: County
+    property: County
+    description: ""
